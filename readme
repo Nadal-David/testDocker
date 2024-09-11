@@ -1,2 +1,12 @@
-DATABASE_URL="postgresql://user:password@postgres:5432/symfony?serverVersion=16&charset=utf8"
+docker compose down
+docker compose buid
+docker compose up -d
+docker compose exec php bash
+
+symfony new api --version="6.4.*"
+cd api/
+composer require api
+
 chown 1000:1000 api/ -R
+
+DATABASE_URL="postgresql://user:password@postgres:5432/symfony?serverVersion=16&charset=utf8"
